@@ -6,6 +6,7 @@ var app = angular.module('app', ['ui.bootstrap']);
 require('./styles.less');
 
 require('./search')(app);
+require('./journey')(app);
 require('./stations')(app);
 
 angular.bootstrap($('#app'), [app.name]);

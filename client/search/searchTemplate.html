@@ -5,7 +5,7 @@
                 type="text" 
                 placeholder="From"
                 ng-model="from" 
-                typeahead-min-length="3"
+                typeahead-min-length="2"
                 typeahead="station for station in findStation($viewValue)" 
                 class="form-control" /> 
 
@@ -14,10 +14,14 @@
                 type="text" 
                 placeholder="To"
                 ng-model="to" 
-                typeahead-min-length="3"
+                typeahead-min-length="2"
                 typeahead="station for station in findStation($viewValue)" 
                 class="form-control" /> 
     <br/>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+    <button class="btn btn-lg btn-primary btn-block" ng-click="findJourneys()" type="submit">Search</button>
+
+    <div class="results">
+        <div journey="journey" ng-repeat="journey in journeys"></div>
+    </div>
   </form>
 </div>
