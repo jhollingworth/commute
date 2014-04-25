@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         dest: 'server/public/main.js',
         options: {
             debug: true,
-            transform: ['brfs', 'cssify']
+            transform: ['node-lessify', 'brfs']
         }
     }
 
@@ -14,6 +14,7 @@ module.exports = function(grunt) {
         dev: options(),
         watch: options({
             options: {
+                debug: true,
                 watch: true, 
                 keepAlive: true
             }

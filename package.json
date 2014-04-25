@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "setup": "npm install -g bower grunt-cli && bower install",
     "start": "grunt serve"
   },
   "dependencies": {
@@ -12,9 +13,9 @@
     "moment": "^2.6.0",
     "q": "^1.0.1",
     "ejs": "^1.0.0",
+    "angular-bootstrap": "0.0.4",
     "jquery": "^2.1.0",
-    "angular": "^1.2.16",
-    "twitter-bootstrap-3.0.0": "^3.0.0"
+    "angular": "^1.2.16"
   },
   "devDependencies": {
     "grunt": "^0.4.4",
@@ -25,6 +26,6 @@
     "load-grunt-tasks": "^0.4.0",
     "browserify": "^3.44.2",
     "brfs": "^1.1.1",
-    "cssify": "^0.5.0"
+    "node-lessify": "0.0.3"
   }
 }

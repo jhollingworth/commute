@@ -1,3 +1,23 @@
-<div class="search">
-    <h1>Search</h1>
+<div class="search container">
+    <form role="form">
+        <input  required
+                autofocus
+                type="text" 
+                placeholder="From"
+                ng-model="from" 
+                typeahead-min-length="3"
+                typeahead="station for station in findStation($viewValue)" 
+                class="form-control" /> 
+
+        <input  required
+                autofocus
+                type="text" 
+                placeholder="To"
+                ng-model="to" 
+                typeahead-min-length="3"
+                typeahead="station for station in findStation($viewValue)" 
+                class="form-control" /> 
+    <br/>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+  </form>
 </div>
