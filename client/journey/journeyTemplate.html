@@ -1,3 +1,8 @@
 <div class="journey">
-    <span ng-bind="journey.duration"></span>
+    <div class="departs">Departs in 
+        <span class="important" ng-bind="minToDeparture"></span>
+    </div>
+    <div class="arrives">Arrives at
+        <span class="important" ng-bind="timeArrives"></span> (Takes <span class="duration" ng-bind="journey.duration"></span> minutes)
+    </div>
 </div>
