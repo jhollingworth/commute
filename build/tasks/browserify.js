@@ -3,7 +3,11 @@ var _ = require('lodash');
 module.exports = function(grunt) {
     var DEFAULT_OPTIONS = {
         src: ['client/main.js'],
-        dest: 'server/public/main.js'
+        dest: 'server/public/main.js',
+        options: {
+            debug: true,
+            transform: ['brfs', 'cssify']
+        }
     }
 
     grunt.config('browserify', {
@@ -20,8 +24,10 @@ module.exports = function(grunt) {
             }
         })
     })
+
+    // console.log(JSON.stringify(grunt.config('browserify'), null, 2))
     
     function options(locals) {
-        return _.extend(locals, DEFAULT_OPTIONS);
+        return _.merge(locals || {}, DEFAULT_OPTIONS);
     }
 }
