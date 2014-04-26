@@ -1,6 +1,6 @@
 var _ = require('lodash');
 
-function SearchController($scope, $log, stations, journeys) {
+function SearchController($scope, $log, $rootScope, stations) {
     var stationsCache = {}
 
     $scope.to = null;
@@ -26,25 +26,10 @@ function SearchController($scope, $log, stations, journeys) {
         var to = stationsCache[$scope.to];
         var from = stationsCache[$scope.from];
     
-        if(to && from) {
-            journeys.search(from, to)
-                .then(showJourneys)
-
-        } else {
-            showJourneysError('Invalid from or to')        
-        }
-
-        function showJourneys(journeys) {
-            $scope.journeys = journeys
-            console.log('journeys', $scope.journeys)
-        }
-
-        function showJourneysError(err) {
-            $log.error(err)
-        }
+        $rootScope.$broadcast('get.timetable', from, to);
     }
 }
 
-SearchController.$inject = ['$scope', '$log', 'stations', 'journeys'];
+SearchController.$inject = ['$scope', '$log', '$rootScope', 'stations'];
 
 module.exports = SearchController;

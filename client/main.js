@@ -8,5 +8,6 @@ require('./styles.less');
 require('./search')(app);
 require('./journey')(app);
 require('./stations')(app);
+require('./timetable')(app);
 
 angular.bootstrap($('#app'), [app.name]);

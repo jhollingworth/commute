@@ -23,7 +23,7 @@ var DEFAULT_OPTIONS = {
 
 //returns a promise that resolves to an array of journey's.
 //to and from are naptanId's
-module.exports = function journeys(from, to, options) {
+module.exports = function timetable(from, to, options) {
 
     options = _.defaults(options || {}, DEFAULT_OPTIONS, {
         'Date': date(),

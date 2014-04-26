@@ -1,11 +1,11 @@
-var getJourneys = require('../lib/journeys');
+var getTimetable = require('../lib/timetable');
 
 module.exports = function (req, res) {
 
     var to = req.query.to;
     var from = req.query.from;
 
-    getJourneys(from, to)
+    getTimetable(from, to)
         .then(success)
         .fail(error)
         .done();

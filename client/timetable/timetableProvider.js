@@ -1,6 +1,6 @@
-var JOURNEYS_URL = '/journeys';
+var TIMETABLE_URL = '/timetable';
 
-function JourneysProvider($http) {
+function TimetableProvider($http) {
     
     this.search = search;
 
@@ -12,7 +12,7 @@ function JourneysProvider($http) {
             }
         };
 
-        return $http.get(JOURNEYS_URL, options).then(getData)
+        return $http.get(TIMETABLE_URL, options).then(getData)
 
         function getData(res) {
             return res.data;
@@ -20,6 +20,6 @@ function JourneysProvider($http) {
     }
 }
 
-JourneysProvider.$inject = ['$http'];
+TimetableProvider.$inject = ['$http'];
 
-module.exports = JourneysProvider;
+module.exports = TimetableProvider;
